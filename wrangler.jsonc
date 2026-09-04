@@ -1,0 +1,9 @@
+{
+  // Change "name" to match the GitHub repo name. Nothing else needs editing.
+  "name": "CHANGE-ME",
+  "compatibility_date": "2026-09-03",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "single-page-application"
+  }
+}

@@ -16,7 +16,8 @@ If the app needs an API key or any other secret, stop and say so before writing 
 
 ## 2. Set the repo identity
 
-- Read this repo's name from `git remote get-url origin` and set `name` in `wrangler.jsonc` to match.
+- Read this repo's name from `git remote get-url origin`. Lowercase it and turn anything that is not a letter, number or hyphen into a hyphen, because Worker names allow nothing else. Set `name` in `wrangler.jsonc` to that.
+- If the result differs from the repo name, say so plainly. The address follows the Worker name, not the repo name, and renaming the repo on github.com is the tidier fix if Cloudflare is not connected yet.
 - Replace the `<title>`, meta description, `<h1>` and lede in `public/index.html`.
 - Rewrite the top of `README.md`: the heading becomes the app name, followed by two sentences on what it does and who it is for. Leave the rest of the README as it is.
 
@@ -27,5 +28,5 @@ Follow `CLAUDE.md`. Everything inline in `public/index.html`, no build step and 
 ## 4. Ship it
 
 - Commit with a clear message and push to `main`. Workers Builds deploys it. Never run `wrangler deploy`.
-- Give Casey the live address: the repo name followed by `.caseymhudetz.workers.dev`. Say that the first build takes a minute or two.
+- Give Casey the live address: the Worker name followed by `.caseymhudetz.workers.dev`. Say that the first build takes a minute or two.
 - Offer to draft the entry for the index page in the `lakeview-labs` repo.
